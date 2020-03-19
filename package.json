@@ -1,0 +1,30 @@
+{
+  "name": "nekocraft-official-website",
+  "version": "0.0.0",
+  "description": "The website of NekoCraft",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url . --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neko-craft/NekocraftOfficialWebsite.git"
+  },
+  "keywords": [
+    "Official",
+    "Website"
+  ],
+  "author": "Shirasawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neko-craft/NekocraftOfficialWebsite/issues"
+  },
+  "homepage": "https://github.com/neko-craft/NekocraftOfficialWebsite#readme",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "less": "^3.11.1"
+  }
+}

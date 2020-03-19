@@ -1,0 +1,331 @@
+@font-face{
+  font-family: 'minecraft';
+  src: url('../assets/minecraft.otf');
+}
+
+.switch {
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  position: relative;
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #7f7f7f;
+    border: 2px solid black;
+  }
+  input[type='checkbox'] {
+    z-index: 1;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &:checked + .background {
+      background-color: #4e8937;
+      border-color: white;
+    }
+    &:checked + .background + .slot {
+      background-color: #006a00;
+    }
+    &:checked + .background + .slot + .thumb {
+      border-color: white;
+      background-color: #46a11e;
+      margin-left: 100%;
+      box-shadow: inset -2px -2px 0 0 #007200, inset 2px 2px 0 0 #37d71f;
+    }
+  }
+  .slot {
+    width: 5px;
+    height: 13px;
+    background-color: #3e3e3e;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -6px -2px 0 0;
+  }
+  .thumb {
+    transition: all .1s ease-out, margin-left .3s ease-in-out;
+    width: 14px;
+    height: calc(100% + 8px);
+    background-color: #c5c4c5;
+    top: -4px;
+    position: absolute;
+    left: -7px;
+    border: 2px solid black;
+    box-shadow: inset -2px -2px 0 0 #565557, inset 2px 2px 0 0 white;
+  }
+}
+
+.badge {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 400;
+  padding: 2px 8px;
+  border-radius: 20px;
+  transition: .3s;
+
+  &.release {
+    color: #999;
+    background-color: #fff;
+    box-shadow: #d9d9d9 0px 0px 0px 1px inset;
+  }
+
+  &.forge {
+    background-color: #fa8c16;
+  }
+  &.forge:hover {
+    background-color: #d77104;
+  }
+  &.fabric {
+    background-color: #52c41a;
+  }
+  &.fabric:hover {
+    background-color: #409914;
+  }
+  &.optifine {
+    background-color: #03a9f4;
+  }
+  &.optifine:hover {
+    background-color: #0284c0;
+  }
+  &.snapshot {
+    background-color: #f5222d;
+  }
+}
+
+.loading {
+  margin: auto;
+  text-align: center;
+  .squares {
+    @w: 25px;
+
+    position: relative;
+    display: inline-block;
+    width: @w * 2;
+    height: @w * 2;
+    overflow: hidden;
+    transform-origin: bottom left;
+    animation: squareShrink 1.5s ease-in-out infinite;
+
+    & > div {
+      position: absolute;
+      width: @w;
+      height: @w;
+      background: #04ca67;
+
+      &:nth-child(1) {
+        left: 0;
+        top: @w;
+      }
+      &:nth-child(2) {
+        left: @w;
+        top: @w;
+        animation: drop2 1.5s ease-out infinite;
+      }
+      &:nth-child(3) {
+        left: 0;
+        top: 0;
+        animation: drop3 1.5s ease-out infinite;
+      }
+      &:nth-child(4) {
+        left: @w;
+        top: 0;
+        animation: drop4 1.5s ease-out infinite;
+      }
+    }
+  }
+}
+@keyframes squareShrink {
+  0% { transform: scale(1) }
+  90% { transform: scale(1) }
+  100% { transform: scale(0.5) }
+}
+@keyframes drop2 {
+  0% { transform: translateY(-50px) }
+  25% { transform: translate(0) }
+  100% { transform: translate(0) }
+}
+@keyframes drop3 {
+  0% { transform: translateY(-50px) }
+  50% { transform: translate(0) }
+  100% { transform: translate(0) }
+}
+@keyframes drop4 {
+  0% { transform: translateY(-50px) }
+  75% { transform: translate(0) }
+  100% { transform: translate(0) }
+}
+
+select {
+  outline: none;
+  border: 2px solid #a0a0a0;
+  padding: 6px;
+}
+option, select {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-border::after,.btn-border::before,.btn-pseudo-element,.btn .grow::after,.btn-danger::after,.btn-danger::before,.btn:disabled::after,.btn:disabled::before,.btn-hexagon::after,.btn-hexagon::before,.btn-info::after,.btn-info::before,.btn-primary::after,.btn-primary::before,.btn-secondary::after,.btn-secondary::before,.btn-warning::after,.btn-warning::before {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  transition: .7s cubic-bezier(0,.8,.26,.99)
+}
+
+.btn-border::before,.btn-danger::before,.btn:disabled::before,.btn-hexagon::before,.btn-info::before,.btn-primary::before,.btn-secondary::before,.btn-warning::before {
+  box-shadow: 0 -4px rgba(0,0,0,.3) inset,0 4px rgba(255,255,255,.5) inset,-4px 0 rgba(255,255,255,.5) inset,4px 0 rgba(0,0,0,.3) inset;
+  z-index: -1
+}
+
+.btn-border::after,.btn-danger::after,.btn:disabled::after,.btn-hexagon::after,.btn-info::after,.btn-primary::after,.btn-secondary::after,.btn-warning::after {
+  box-shadow: 0 4px 0 0 rgba(0,0,0,.15)
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: unset;
+  padding: .8rem 1.5rem;
+  text-decoration: none;
+}
+
+.btn .grow::after {
+  box-shadow: 0 0 0 0 rgba(0,0,0,.15)
+}
+
+.btn:not(:disabled):hover .grow::after {
+  box-shadow: 0 4px 0 0 rgba(0,0,0,.15)
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+  font-size: 2.25rem;
+  line-height: 1.5
+}
+
+.btn-lg {
+  padding: 1.35rem 3.1rem
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.btn-danger,.btn-hexagon,.btn-primary,.btn-secondary {
+  text-shadow: 0 2px 0 rgba(0,0,0,.25);
+}
+
+.btn-primary .grow,.btn-primary::before {
+  background-color: #36b030;
+  box-shadow: 0 -4px rgba(21,108,0,.5) inset,0 4px rgba(100,253,31,.99) inset,-4px 0 rgba(100,253,31,.5) inset,4px 0 rgba(21,108,0,.5) inset;
+}
+
+.btn-primary:not(:disabled):hover .grow,.btn-primary:not(:disabled):hover::before {
+  background-color: #313131;
+  box-shadow: 0 -4px rgba(0,0,0,.5) inset,0 4px rgba(255,255,255,.2) inset,-4px 0 rgba(255,255,255,.2) inset,4px 0 rgba(0,0,0,.5) inset
+}
+
+.btn-primary {
+  color: #fff!important
+}
+
+.btn-secondary {
+  color: #fff!important
+}
+
+.btn-success {
+  color: #fff!important
+}
+
+.btn-info {
+  color: #1d1e1e!important
+}
+
+.btn-warning {
+  color: #1d1e1e!important
+}
+
+.btn-danger {
+  color: #fff!important
+}
+
+.btn-light {
+  color: #1d1e1e!important
+}
+
+.btn-dark {
+  color: #fff!important
+}
+
+.btn-tertiary {
+  color: #1d1e1e!important
+}
+
+.btn-quaternary {
+  color: #fff!important
+}
+
+.btn-quinary {
+  color: #fff!important
+}
+
+.btn-senary {
+  color: #fff!important
+}
+
+.btn-dungeons-primary {
+  color: #fff!important
+}
+
+.btn-dungeons-secondary {
+  color: #fff!important
+}
+
+.btn-secondary::before {
+  background-color: #757575
+}
+
+.btn-info::before {
+  background-color: #5caee0
+}
+
+.btn-warning::before {
+  background-color: #e6b40b
+}
+
+.btn-danger::before {
+  background-color: #d4441a
+}
+
+.btn:disabled {
+  cursor: no-drop;
+  text-shadow: 0 2px 0 rgba(0,0,0,.1);
+  color: #1d1e1e!important;
+}
+
+.btn:disabled::before {
+  background-color: inherit;
+}
