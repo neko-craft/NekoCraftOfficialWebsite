@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/neko-craft/NekocraftOfficialWebsite#readme",
   "devDependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "parcel-plugin-sw-precache": "^1.1.1"
   },
   "dependencies": {
     "less": "^3.11.1"
