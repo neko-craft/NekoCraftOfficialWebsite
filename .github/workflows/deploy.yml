@@ -30,7 +30,7 @@ jobs:
         with:
           build_dir: dist
           committer_email: 764798966@qq.com
-          fqdn: n.apisium.cn
+          fqdn: neko-craft.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
