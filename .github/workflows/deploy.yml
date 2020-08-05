@@ -25,10 +25,10 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v1
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           build_dir: dist
+          fqdn: official.github.neko-craft.com
           committer_email: 764798966@qq.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
