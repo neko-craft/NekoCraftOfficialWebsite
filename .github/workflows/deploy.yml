@@ -35,6 +35,7 @@ jobs:
 
       - name: Tencent Cloud CDN Purge Cache
         uses: keithnull/tencent-cloud-cdn-purge-cache@v1.0
-        SECRET_ID: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
-        SECRET_KEY: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
-        PATHS: https://neko-craft.com
+        env:
+          SECRET_ID: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
+          SECRET_KEY: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
+          PATHS: https://neko-craft.com
