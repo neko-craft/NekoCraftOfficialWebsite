@@ -32,3 +32,9 @@ jobs:
           committer_email: 764798966@qq.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tencent Cloud CDN Purge Cache
+        uses: keithnull/tencent-cloud-cdn-purge-cache@v1.0
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        PATHS: https://neko-craft.com
