@@ -20,12 +20,12 @@
   "bugs": {
     "url": "https://github.com/neko-craft/NekocraftOfficialWebsite/issues"
   },
-  "homepage": "https://github.com/neko-craft/NekocraftOfficialWebsite#readme",
-  "devDependencies": {
-    "parcel": "^1.12.4",
-    "parcel-plugin-sw-precache": "^1.1.1"
+  "targets": {
+    "main": false
   },
+  "homepage": "https://github.com/neko-craft/NekocraftOfficialWebsite#readme",
   "dependencies": {
-    "less": "^3.11.1"
+    "less": "^4.1.1",
+    "parcel": "1.12.3"
   }
 }
