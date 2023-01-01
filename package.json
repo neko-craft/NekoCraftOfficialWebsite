@@ -26,6 +26,6 @@
   "homepage": "https://github.com/neko-craft/NekocraftOfficialWebsite#readme",
   "dependencies": {
     "less": "^4.1.1",
-    "parcel": "1.12.3"
+    "parcel": "2.8.2"
   }
 }
